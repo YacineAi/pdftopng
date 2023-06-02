@@ -18,7 +18,7 @@ app.get('/img', async (req, res) => {
       pge: page,
       pdfPath: pdfPath,
       imagePath: `my-image-${requestId}`, // Include the unique identifier in the image path
-      scale: 0.9,
+      scale: 1,
     });
 
     const imageResponse = Buffer.from(conv.base64Image, 'base64');
