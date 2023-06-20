@@ -24,7 +24,7 @@ app.get('/img', async (req, res) => {
     const imageResponse = Buffer.from(conv.base64Image, 'base64');
     imageCache[requestId] = imageResponse; // Cache the image data in memory
 
-    res.json({ id : requestId }); // Redirect to the endpoint with the unique identifier
+    res.json({ id : requestId, tpage : conv.pages }); // Redirect to the endpoint with the unique identifier
   } catch (error) {
     console.error('Error during conversion:', error);
     res.status(500).send('Image conversion failed');
